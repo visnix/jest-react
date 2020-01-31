@@ -7,6 +7,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 test('renders learn react link', () => {
   const wrapper = shallow(<App />);
-  expect(wrapper.find('.app-container').length).toBe(1)
-  expect(wrapper.find(".app-container").prop('title')).toBe('hello xy')
-});
+  expect(wrapper).toMatchSnapshot();
+  // expect(wrapper.find('[data-test="container"]')).toExist()
+  // expect(wrapper.find('[data-test="container"]')).toHaveProp('title', 'hello xy')
+})
